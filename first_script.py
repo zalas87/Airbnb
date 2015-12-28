@@ -93,5 +93,6 @@ all_data = add_time_difference(all_data, 'date_account_created', 'timestamp_firs
 #drop some attributes
 all_data = all_data.drop(['affiliate_channel', 'affiliate_provider', 'first_affiliate_tracked', 'signup_app', 'first_device_type', 'first_browser'], axis=1)
 
-X_train = all_data[:len(labels)]
+X_train = all_data[:len(labels)].values
 y_train = labels
+X_test = all_data[len(labels):].values
